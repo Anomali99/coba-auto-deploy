@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return jsonify({
         "message" : True,
-        "update" : 1.8,
+        "update" : 1.9,
     })
 
 if __name__ == "__main__":
