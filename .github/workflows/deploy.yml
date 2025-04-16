@@ -23,7 +23,7 @@ jobs:
           mkdir -p $HOME/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > $HOME/.ssh/id_rsa
           chmod 600 $HOME/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.VPS_IP }} >> $HOME/.ssh/known_hosts
+          ssh-keyscan -p ${{ secrets.VPS_PORT }} -H ${{ secrets.VPS_IP }} >> $HOME/.ssh/known_hosts
 
       - name: Deploy Backend (Flask via PM2)
         run: |
